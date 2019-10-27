@@ -37,7 +37,7 @@ public class ReceiveEventB : MonoBehaviour
         if ((int)e.Code < 200)  // 200 以上はシステムで使われているので処理しない
         {
             // イベントで受け取った内容をログに出力する
-            string message = "EventReceived. EventCode: " + e.Code.ToString() + ", Message: " + ((object[])e.CustomData).ToStringFull() + ", From: " + e.Sender.ToString();
+            string message = "EventReceived. EventCode: " + e.Code.ToString() + ", Message: " + e.CustomData.ToString() + ", From: " + e.Sender.ToString();
             Debug.Log(message);
         }
     }

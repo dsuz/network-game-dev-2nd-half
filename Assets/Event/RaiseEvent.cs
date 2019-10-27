@@ -23,10 +23,6 @@ public class RaiseEvent : MonoBehaviour
     {
         //イベントとして送るものを作る
         byte eventCode = 0; // イベントコード 0~199 まで指定できる。200 以上はシステムで使われているので使えない。
-        object[] customData = new object[]
-        {
-            m_message,
-        };  // イベントとして送るデータ
         RaiseEventOptions raiseEventOptions = new RaiseEventOptions
         {
             Receivers = ReceiverGroup.All,  // 全体に送る 他に MasterClient, Others が指定できる
@@ -34,6 +30,6 @@ public class RaiseEvent : MonoBehaviour
         SendOptions sendOptions= new SendOptions(); // オプションだが、特に何も指定しない
 
         // イベントを起こす
-        PhotonNetwork.RaiseEvent(eventCode, customData, raiseEventOptions, sendOptions);
+        PhotonNetwork.RaiseEvent(eventCode, m_message, raiseEventOptions, sendOptions);
     }
 }
