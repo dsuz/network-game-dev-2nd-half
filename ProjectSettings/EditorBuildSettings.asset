@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TurnBased/New Scene.unity
+    guid: 9dc50abedcf95694da5230a0d6fe77e6
+  - enabled: 0
     path: Assets/GameScene.unity
     guid: 2211509aa1357a74c9533872efd4eb78
