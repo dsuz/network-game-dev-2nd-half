@@ -48,6 +48,9 @@ public class LaserCannonController : MonoBehaviour, IPunTurnManagerCallbacks
         if (isHit)
         {
             // Ray が当たっている時は線を引くために hitpoint にアンカーを移動する
+            Vector3 lookAtPosition = hit.point;
+            lookAtPosition.y = this.transform.position.y;
+            this.transform.LookAt(lookAtPosition);
             m_hitPoint.position = hit.point;
             // Ray が当たっている状態で Fire したら
             if (Input.GetButtonUp("Fire1"))
